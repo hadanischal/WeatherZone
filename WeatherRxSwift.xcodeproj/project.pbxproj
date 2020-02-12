@@ -11,7 +11,6 @@
 		040E95E423DB047F002BAB43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E95E323DB047F002BAB43 /* AppDelegate.swift */; };
 		040E95E623DB047F002BAB43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E95E523DB047F002BAB43 /* SceneDelegate.swift */; };
 		040E95EE23DB047F002BAB43 /* WeatherRxSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 040E95EC23DB047F002BAB43 /* WeatherRxSwift.xcdatamodeld */; };
-		040E95F023DB0482002BAB43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040E95EF23DB0482002BAB43 /* Assets.xcassets */; };
 		040E95F323DB0482002BAB43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E95F123DB0482002BAB43 /* LaunchScreen.storyboard */; };
 		040E95FE23DB0482002BAB43 /* WeatherRxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E95FD23DB0482002BAB43 /* WeatherRxSwiftTests.swift */; };
 		040E960923DB0483002BAB43 /* WeatherRxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E960823DB0483002BAB43 /* WeatherRxSwiftUITests.swift */; };
@@ -81,10 +80,11 @@
 		0437188823DBA0B100756CEA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437188023DBA0B100756CEA /* Assets.swift */; };
 		0437188923DBA0B100756CEA /* GeneratedJSONFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437188223DBA0B100756CEA /* GeneratedJSONFiles.swift */; };
 		0437189223DBA13900756CEA /* StandardColors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0437188B23DBA13900756CEA /* StandardColors.txt */; };
-		0437189523DBA13900756CEA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0437188F23DBA13900756CEA /* Icons.xcassets */; };
 		0437189823DBCAD400756CEA /* Mock.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0437189723DBCAD400756CEA /* Mock.strings */; };
 		0437189A23DBCAEC00756CEA /* DashBoard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0437189923DBCAEC00756CEA /* DashBoard.strings */; };
 		0453F96C23E5090700404F3B /* .pecker.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0453F96B23E5090700404F3B /* .pecker.yml */; };
+		048E9AAC23F3B2E500509B6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048E9AAA23F3B2E500509B6A /* Assets.xcassets */; };
+		048E9AAD23F3B2E500509B6A /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048E9AAB23F3B2E500509B6A /* Icons.xcassets */; };
 		04EA1C6C23DB094100D535A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EA1C6A23DB094100D535A6 /* Main.storyboard */; };
 		04EA1C7223DB0B9D00D535A6 /* CitySearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA1C6D23DB0B9D00D535A6 /* CitySearchViewModelTests.swift */; };
 		04EA1C7323DB0B9D00D535A6 /* AnimationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA1C6E23DB0B9D00D535A6 /* AnimationViewModelTests.swift */; };
@@ -136,7 +136,6 @@
 		040E95E323DB047F002BAB43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		040E95E523DB047F002BAB43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		040E95ED23DB047F002BAB43 /* WeatherRxSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherRxSwift.xcdatamodel; sourceTree = "<group>"; };
-		040E95EF23DB0482002BAB43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040E95F223DB0482002BAB43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040E95F423DB0482002BAB43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040E95F923DB0482002BAB43 /* WeatherRxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherRxSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,10 +210,11 @@
 		0437188023DBA0B100756CEA /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		0437188223DBA0B100756CEA /* GeneratedJSONFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedJSONFiles.swift; sourceTree = "<group>"; };
 		0437188B23DBA13900756CEA /* StandardColors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StandardColors.txt; sourceTree = "<group>"; };
-		0437188F23DBA13900756CEA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		0437189723DBCAD400756CEA /* Mock.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Mock.strings; sourceTree = "<group>"; };
 		0437189923DBCAEC00756CEA /* DashBoard.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DashBoard.strings; sourceTree = "<group>"; };
 		0453F96B23E5090700404F3B /* .pecker.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .pecker.yml; sourceTree = "<group>"; };
+		048E9AAA23F3B2E500509B6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		048E9AAB23F3B2E500509B6A /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		04EA1C6B23DB094100D535A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04EA1C6D23DB0B9D00D535A6 /* CitySearchViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchViewModelTests.swift; sourceTree = "<group>"; };
 		04EA1C6E23DB0B9D00D535A6 /* AnimationViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewModelTests.swift; sourceTree = "<group>"; };
@@ -546,9 +546,8 @@
 				0437188A23DBA13900756CEA /* Colors */,
 				0437189023DBA13900756CEA /* JsonFile */,
 				0437188C23DBA13900756CEA /* Strings */,
+				048E9AA923F3B2E500509B6A /* Assets */,
 				040E965B23DB061A002BAB43 /* Fonts */,
-				0437188F23DBA13900756CEA /* Icons.xcassets */,
-				040E95EF23DB0482002BAB43 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -670,6 +669,15 @@
 				040E965F23DB061A002BAB43 /* StartCity.json */,
 			);
 			path = JsonFile;
+			sourceTree = "<group>";
+		};
+		048E9AA923F3B2E500509B6A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				048E9AAA23F3B2E500509B6A /* Assets.xcassets */,
+				048E9AAB23F3B2E500509B6A /* Icons.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		04EA1C7023DB0B9D00D535A6 /* GeolocationServiceTest */ = {
@@ -880,14 +888,14 @@
 				040E969C23DB061B002BAB43 /* StartCity.json in Resources */,
 				0437189A23DBCAEC00756CEA /* DashBoard.strings in Resources */,
 				040E969823DB061B002BAB43 /* detailList.json in Resources */,
-				0437189523DBA13900756CEA /* Icons.xcassets in Resources */,
 				0437189823DBCAD400756CEA /* Mock.strings in Resources */,
 				040E969A23DB061B002BAB43 /* ApexRounded-Medium.otf in Resources */,
 				040E969B23DB061B002BAB43 /* ApexRounded-Heavy.otf in Resources */,
 				040E969723DB061B002BAB43 /* cityList.json in Resources */,
 				040E95F323DB0482002BAB43 /* LaunchScreen.storyboard in Resources */,
+				048E9AAD23F3B2E500509B6A /* Icons.xcassets in Resources */,
 				0400327823DBD4FB003D53DD /* weather-app-animation.json in Resources */,
-				040E95F023DB0482002BAB43 /* Assets.xcassets in Resources */,
+				048E9AAC23F3B2E500509B6A /* Assets.xcassets in Resources */,
 				0437187323DBA09500756CEA /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -172,7 +172,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="VLm-Pc-7Wk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="vWg-ch-zq4">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="vWg-ch-zq4">
                             <connections>
                                 <segue destination="qxM-BA-J75" kind="show" id="rK4-a8-cxo"/>
                             </connections>
@@ -488,5 +488,6 @@
     </scenes>
     <resources>
         <image name="iconsCancel" width="22" height="22"/>
+        <image name="settings" width="24" height="24"/>
     </resources>
 </document>

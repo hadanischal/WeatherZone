@@ -22,6 +22,8 @@ internal enum Asset {
     internal static let iconsCancel = ImageAsset(name: "iconsCancel")
   }
   internal enum Icons {
+    internal static let menuIcon = ImageAsset(name: "menuIcon")
+    internal static let settings = ImageAsset(name: "settings")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

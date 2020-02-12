@@ -3,8 +3,8 @@
 
 xcassets:
   inputs:
-    - ./WeatherRxSwift/Resources/Assets.xcassets
-    - ./WeatherRxSwift/Resources/Icons.xcassets
+    - ./WeatherRxSwift/Resources/Assets/Assets.xcassets
+    - ./WeatherRxSwift/Resources/Assets/Icons.xcassets
   outputs:
     - templateName: swift4
       output: ./WeatherRxSwift/Generated/SwiftGen/Assets/Assets.swift
