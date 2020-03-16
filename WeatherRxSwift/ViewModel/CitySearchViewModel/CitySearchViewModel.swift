@@ -24,7 +24,7 @@ final class CitySearchViewModel: CitySearchDataSource {
     var isLoading: Observable<Bool>
 
     //input
-    private let cityListHandler: CityListHandlerProtocol
+    private let cityListHandler: AddCityListHandlerProtocol
     private let backgroundScheduler: SchedulerType
 
     private let cityListSubject = PublishSubject<[CityListModel]>()
@@ -33,7 +33,7 @@ final class CitySearchViewModel: CitySearchDataSource {
     private var localCityList: [CityListModel]
     private let disposeBag = DisposeBag()
 
-    init(withCityList cityListHandler: CityListHandlerProtocol = CityListHandler(),
+    init(withCityList cityListHandler: AddCityListHandlerProtocol = FileManagerWraper(),
          withSchedulerType backgroundScheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
         self.cityListHandler = cityListHandler
         self.backgroundScheduler = backgroundScheduler
@@ -47,7 +47,7 @@ final class CitySearchViewModel: CitySearchDataSource {
         self.loadingSubject.accept(true)
 
         self.cityListHandler
-            .getCityInfo(withFilename: "cityList")
+            .getSearchCityList()
             .subscribeOn(backgroundScheduler)
             .subscribe(onNext: { [weak self] cityList in
                 self?.cityListSubject.onNext(cityList)

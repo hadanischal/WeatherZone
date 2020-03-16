@@ -20,16 +20,16 @@ class CityListViewModelTests: QuickSpec {
 
     override func spec() {
         var testViewModel: CityListViewModel!
-        var mockCityListHandler: MockCityListHandlerProtocol!
+        var mockCityListHandler: MockStartCityListHandlerProtocol!
         var mockGetWeatherHandler: MockGetWeatherHandlerProtocol!
         var testScheduler: TestScheduler!
 
         describe("CityListViewModel") {
             beforeEach {
                 testScheduler = TestScheduler(initialClock: 0)
-                mockCityListHandler = MockCityListHandlerProtocol()
+                mockCityListHandler = MockStartCityListHandlerProtocol()
                 stub(mockCityListHandler, block: { stub in
-                    when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.error(RxError.noElements))
+                    when(stub.getStartCityList()).thenReturn(Observable.error(RxError.noElements))
                 })
                 mockGetWeatherHandler = MockGetWeatherHandlerProtocol()
                 stub(mockGetWeatherHandler, block: { stub in
@@ -45,14 +45,14 @@ class CityListViewModelTests: QuickSpec {
                 context("when server request succeed ", {
                     beforeEach {
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                            when(stub.getStartCityList()).thenReturn(Observable.just([cityList]))
                         })
                         stub(mockGetWeatherHandler, block: { stub in
                             when(stub.getWeatherInfo(byCityIDs: any())).thenReturn(Observable.just(citysWeatherResult))
                         })
                     }
                     it("calls to the CityListHandler to get city info", closure: {
-                        verify(mockCityListHandler).getCityInfo(withFilename: any())
+                        verify(mockCityListHandler).getStartCityList()
                     })
                     it("calls to the GetWeatherHandler to get weather info", closure: {
                         testViewModel.getCityListFromFile()
@@ -100,7 +100,7 @@ class CityListViewModelTests: QuickSpec {
                 context("when get city info request failed ", {
                     beforeEach {
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.error(RxError.noElements))
+                            when(stub.getStartCityList()).thenReturn(Observable.error(RxError.noElements))
                         })
                     }
                     it("emits weather list to the UI to update list", closure: {
@@ -118,7 +118,7 @@ class CityListViewModelTests: QuickSpec {
                     beforeEach {
 
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                            when(stub.getStartCityList()).thenReturn(Observable.just([cityList]))
                         })
                         stub(mockGetWeatherHandler, block: { stub in
                             when(stub.getWeatherInfo(byCityIDs: any())).thenReturn(Observable.error(RxError.noElements))

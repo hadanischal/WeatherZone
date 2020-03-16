@@ -29,7 +29,7 @@ class WeatherDetailViewModelTests: QuickSpec {
                 testScheduler = TestScheduler(initialClock: 0)
                 mockDetailListHandler = MockDetailListHandlerProtocol()
                 stub(mockDetailListHandler, block: { stub in
-                    when(stub.getDetailInfo(withFilename: any())).thenReturn(Observable.just(mockDetailList))
+                    when(stub.getDetailInfo()).thenReturn(Observable.just(mockDetailList))
                 })
                 testViewModel = WeatherDetailViewModel(withDetailListHandler: mockDetailListHandler,
                                                        withWeatherResultModel: mockWeatherResult,
@@ -40,11 +40,11 @@ class WeatherDetailViewModelTests: QuickSpec {
                 context("when get request succeed ", {
                     beforeEach {
                         stub(mockDetailListHandler, block: { stub in
-                            when(stub.getDetailInfo(withFilename: any())).thenReturn(Observable.just(mockDetailList))
+                            when(stub.getDetailInfo()).thenReturn(Observable.just(mockDetailList))
                         })
                     }
                     it("calls to the CityListHandler to get city info", closure: {
-                        verify(mockDetailListHandler).getDetailInfo(withFilename: any())
+                        verify(mockDetailListHandler).getDetailInfo()
                     })
 
                     it("emits weather changed for detail to the UI", closure: {
@@ -76,11 +76,11 @@ class WeatherDetailViewModelTests: QuickSpec {
                 context("when get detail information List fails ", {
                     beforeEach {
                         stub(mockDetailListHandler, block: { stub in
-                            when(stub.getDetailInfo(withFilename: any())).thenReturn(Observable.error(RxError.noElements))
+                            when(stub.getDetailInfo()).thenReturn(Observable.error(RxError.noElements))
                         })
                     }
                     it("calls to the CityListHandler to get city info", closure: {
-                        verify(mockDetailListHandler).getDetailInfo(withFilename: any())
+                        verify(mockDetailListHandler).getDetailInfo()
                     })
 
                     it("emits weather changed for detail to the UI", closure: {

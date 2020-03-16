@@ -12,9 +12,9 @@ import RxCocoa
 
 protocol CityListDataSource {
     var weatherList: Observable<[WeatherResult]> { get }
+    var errorMessage: Observable<String> { get }
     func getCityListFromFile()
     func fetchWeatherFor(selectedCity cityName: CityListModel)
-    var errorMessage: Observable<String> { get }
 }
 
 final class CityListViewModel: CityListDataSource {
@@ -25,13 +25,13 @@ final class CityListViewModel: CityListDataSource {
     var errorMessage: Observable<String>
 
     //input
-    private let cityListHandler: CityListHandlerProtocol
+    private let cityListHandler: StartCityListHandlerProtocol
     private let weatherHandler: GetWeatherHandlerProtocol
     private let weatherListBehaviorRelay: BehaviorRelay<[WeatherResult]> = BehaviorRelay(value: [])
     private let errorSubject = PublishSubject<String>()
     private let disposeBag = DisposeBag()
 
-    init(withCityList cityListHandler: CityListHandlerProtocol = CityListHandler(),
+    init(withCityList cityListHandler: StartCityListHandlerProtocol = FileManagerWraper(),
          withGetWeather weatherHandler: GetWeatherHandlerProtocol = GetWeatherHandler()) {
         self.cityListHandler = cityListHandler
         self.weatherHandler = weatherHandler
@@ -56,7 +56,7 @@ final class CityListViewModel: CityListDataSource {
 
     func getCityListFromFile() {
         self.cityListHandler
-            .getCityInfo(withFilename: "StartCity")
+            .getStartCityList()
             .subscribe(onNext: { [weak self] cityListModel in
                 self?.cityList = cityListModel
                 self?.getWeatherInfoForCityList()

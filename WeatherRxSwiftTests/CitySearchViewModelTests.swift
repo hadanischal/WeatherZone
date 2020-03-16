@@ -20,15 +20,15 @@ class CitySearchViewModelTests: QuickSpec {
 
     override func spec() {
         var testViewModel: CitySearchViewModel!
-        var mockCityListHandler: MockCityListHandlerProtocol!
+        var mockCityListHandler: MockSearchCityListHandlerProtocol!
         var testScheduler: TestScheduler!
 
         describe("CitySearchViewModel") {
             beforeEach {
                 testScheduler = TestScheduler(initialClock: 0)
-                mockCityListHandler = MockCityListHandlerProtocol()
+                mockCityListHandler = MockSearchCityListHandlerProtocol()
                 stub(mockCityListHandler, block: { stub in
-                    when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                    when(stub.getSearchCityList()).thenReturn(Observable.just([cityList]))
                 })
                 testViewModel = CitySearchViewModel(withCityList: mockCityListHandler, withSchedulerType: MainScheduler.instance)
             }
@@ -38,12 +38,12 @@ class CitySearchViewModelTests: QuickSpec {
                 context("when getCityInfo withFilename succeed ", {
                     beforeEach {
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                            when(stub.getSearchCityList()).thenReturn(Observable.just([cityList]))
                         })
                     }
                     it("calls to the CityListHandler to get city info", closure: {
                         testViewModel.getCityList()
-                        verify(mockCityListHandler).getCityInfo(withFilename: any())
+                        verify(mockCityListHandler).getSearchCityList()
                     })
 
                     it("emits cityList Changed to the UI", closure: {
@@ -88,12 +88,12 @@ class CitySearchViewModelTests: QuickSpec {
                 context("when get city info request failed ", {
                     beforeEach {
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.error(RxError.noElements))
+                            when(stub.getSearchCityList()).thenReturn(Observable.error(RxError.noElements))
                         })
                     }
                     it("calls to the CityListHandler to get city info", closure: {
                         testViewModel.getCityList()
-                        verify(mockCityListHandler).getCityInfo(withFilename: any())
+                        verify(mockCityListHandler).getSearchCityList()
                     })
                     it("doesnt emits weather list to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
@@ -115,7 +115,7 @@ class CitySearchViewModelTests: QuickSpec {
                         searchText = testScheduler.createColdObservable([Recorded.next(300, "Sydney")]).asObservable()
 
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                            when(stub.getSearchCityList()).thenReturn(Observable.just([cityList]))
                         })
                     }
 
@@ -163,7 +163,7 @@ class CitySearchViewModelTests: QuickSpec {
                         searchText = testScheduler.createColdObservable([Recorded.next(300, "abcd"), Recorded.next(320, "syd")]).asObservable()
 
                         stub(mockCityListHandler, block: { stub in
-                            when(stub.getCityInfo(withFilename: any())).thenReturn(Observable.just([cityList]))
+                            when(stub.getSearchCityList()).thenReturn(Observable.just([cityList]))
                         })
                     }
 

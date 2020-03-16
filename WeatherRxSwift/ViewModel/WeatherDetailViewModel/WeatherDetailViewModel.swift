@@ -29,7 +29,7 @@ final class WeatherDetailViewModel: WeatherDetailDataSource {
     private var detailSubject = PublishSubject<[DetailModel]>()
     private let disposeBag = DisposeBag()
 
-    init(withDetailListHandler detailListHandler: DetailListHandlerProtocol = DetailListHandler(),
+    init(withDetailListHandler detailListHandler: DetailListHandlerProtocol = FileManagerWraper(),
          withWeatherResultModel weatherResult: WeatherResult,
          withSchedulerType backgroundScheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
         self.detailListHandler = detailListHandler
@@ -42,7 +42,7 @@ final class WeatherDetailViewModel: WeatherDetailDataSource {
 
      func getDetailResult() {
         self.detailListHandler
-            .getDetailInfo(withFilename: "detailList")
+            .getDetailInfo()
             .subscribeOn(backgroundScheduler)
             .subscribe(onNext: { [weak self] detailList in
                 self?.detailModel = detailList

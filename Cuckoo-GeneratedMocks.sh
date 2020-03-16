@@ -14,8 +14,7 @@ echo "Mocks Input Directory = $INPUT_DIR"
 ${PODS_ROOT}/Cuckoo/run generate --testable "WeatherRxSwift" \
 --output "${OUTPUT_FILE}" \
 "$INPUT_DIR/APIHandler/GetWeatherHandlerProtocol.swift" \
-"$INPUT_DIR/APIHandler/CityListHandlerProtocol.swift" \
-"$INPUT_DIR/APIHandler/DetailListHandlerProtocol.swift" \
+"$INPUT_DIR/FileManagerHandler/FileManagerWraper.swift" \
 "$INPUT_DIR/Utility/UserDefaultsManager/UserDefaultsManager.swift" \
 "$INPUT_DIR/Utility/TemperatureUnitManager/TemperatureUnitManager.swift" \
 
